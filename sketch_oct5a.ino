@@ -15,24 +15,16 @@ void loop()
   int val = analogRead(sensor_pin);
   Serial.println(val);
   delay(100);
-
-  if (val > val_max)
-  {
+  if (val > val_max){
     val_max = val;
   }
-
-  if (val < val_min)
-  {
+  if (val < val_min){
     val_min = val;
   }
-
-
-  if (val < (val_max + val_min)/2)
-  {
+  if (val < (val_max + val_min)/2){
     digitalWrite(led_pin, HIGH);
   }
-  else
-  {
+  else{
     digitalWrite(led_pin, LOW);
   }
 }
